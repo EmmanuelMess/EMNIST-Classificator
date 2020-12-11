@@ -96,6 +96,7 @@ if __name__ == '__main__':
     print("acc : {}".format(numpy_eval()))
 
     petru = load_image("data/img.png")
+    #TODO preprocess the image
     print(np.argmax(forward(petru.reshape((-1, 28 * 28)))))
     print(forward(petru.reshape((-1, 28 * 28))))
 
