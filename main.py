@@ -61,10 +61,10 @@ if __name__ == '__main__':
     model = BobNet()
 
     loss_function = nn.NLLLoss()
-    optim = torch.optim.Adam(model.parameters(), lr=0.0001, weight_decay=0.01)
+    optim = torch.optim.Adam(model.parameters(), lr=0.0001, weight_decay=0.005)
     BS = 512
     losses, accuracies = [], []
-    for i in (t := trange(10000)):
+    for i in (t := trange(20000)):
         samp = np.random.randint(0, X_train.shape[0], size=(BS))
         X = torch.tensor(X_train[samp].reshape((-1, 28 * 28))).float()
         Y = torch.tensor(Y_train[samp]).long()
